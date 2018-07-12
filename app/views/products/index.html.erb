@@ -1,0 +1,15 @@
+<div class="container">
+	<% @products.each do |product| %>
+	  <div class="card" style="width: 18rem;">
+	    	<%= link_to(product_path(product),class: 'card-text') do %>
+	    		<img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
+	        <div class="card-body">
+			      <p>
+			      	<%= product.title %>
+			      </p>
+			      <p>詳細</p>
+			    </div>
+		    <% end %>
+	  </div>
+	<% end %>
+</div>

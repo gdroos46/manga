@@ -1,0 +1,11 @@
+<div class="contents row">
+  <%= form_for [@topic] do |f| %>
+    <h3>編集する</h3>
+	  <div class="field">
+	    <%= f.text_field :topic_title, class: "contents" %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "編集" %>
+   </div>
+  <% end %>
+</div>

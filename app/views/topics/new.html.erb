@@ -1,0 +1,8 @@
+<div class="container">
+	<%= form_for [@product, @topic] do |form| %>
+	  <%= text_field :topic, :topic_title, class: "contents" %>
+	  <div class="actions">
+	    <%= form.submit %>
+	  </div>
+	<% end %>
+</div>

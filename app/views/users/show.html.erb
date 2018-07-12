@@ -1,0 +1,10 @@
+<div class="contents">
+	<div class="title">
+		<%= @nickname %>
+	</div>
+	<% @topics.each do |topic| %>
+		<div class="card">
+	    <%= link_to "#{topic.topic_title}", topic_path(topic)  %>
+	  </div>
+	<% end %>
+</div>

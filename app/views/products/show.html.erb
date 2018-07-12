@@ -1,0 +1,16 @@
+<div class="contents">
+  <img src="<%= @product.image_url %>">
+	<div class="title">
+		<%= @product.title %>
+	</div>
+	<%= link_to "トピック投稿", "/products/#{@product.id}/topics/new" %>
+	<% @product.topics.each do |topic| %>
+		<div class="card">
+	    	<%= link_to "#{topic.topic_title}", topic_path(topic)  %>
+	    	<% if user_signed_in? && current_user.id == topic.user_id %>
+	    	  <%= link_to "edit", edit_topic_path(topic) %>
+	    	  <%= link_to "delete", "/topics/#{topic.id}", method: :delete %>
+	    	<% end %>
+	  	</div>
+		<% end %>
+</div>
