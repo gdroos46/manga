@@ -11,6 +11,7 @@ class TopicsController < ApplicationController
 
 	def show
 		@topic = Topic.find(params[:id])
+		@comments = @topic.comments.includes(:user)
 	end
 
 	def edit
@@ -41,3 +42,4 @@ class TopicsController < ApplicationController
     params.require(:topic).permit(:topic_title).merge(product_id: params[:product_id], user_id: current_user.id)
   end
 end
+
